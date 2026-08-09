@@ -24,21 +24,21 @@ jobs:
           set -e
 
           # Go to deployment directory
-          cd /var/www/html/cicd-project 
+          sudo cd /var/www/html/cicd-project 
 
           # Set Git safe directory
-          git config --global --add safe.directory /var/www/html/cicd-project
+          sudo git config --global --add safe.directory /var/www/html/cicd-project
 
           # Save last successful commit
           LAST_COMMIT=$(git rev-parse HEAD)
           echo $LAST_COMMIT > /tmp/last_commit
 
           # Pull latest code
-          git checkout main
+          sudo git checkout main
 
-          git pull origin main || {
+          sudo git pull origin main || {
             echo "Deployment failed, rolling back..."
-            git reset --hard $(cat /tmp/last_commit)
+            sudo git reset --hard $(cat /tmp/last_commit)
             exit 1
           }
 
