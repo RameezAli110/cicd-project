@@ -20,7 +20,7 @@ jobs:
 
       - name: Deploy Application
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-44-203-203-234 << 'EOF'
+          ssh -o StrictHostKeyChecking=no ubuntu@44.203.203.234 << 'EOF'
           set -e
 
           # Go to deployment directory
