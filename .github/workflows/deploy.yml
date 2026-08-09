@@ -24,7 +24,7 @@ jobs:
           set -e
 
           # Go to deployment directory
-          sudo cd /var/www/html/cicd-project 
+          cd /var/www/html/cicd-project 
 
           # Set Git safe directory
           sudo git config --global --add safe.directory /var/www/html/cicd-project
