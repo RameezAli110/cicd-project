@@ -1,4 +1,4 @@
-name: Deploy CICD Project
+name: Deploy CICD Project done
 
 on:
   push:
